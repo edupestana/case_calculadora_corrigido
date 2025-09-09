@@ -14,11 +14,11 @@ B. Resolvendo as questões.
 
     1. Aplicação só está processando o primeiro item da fila infinitamente.
 
-        O problema ocorre porque o metodo Peek não remove o item da fila, apenas copia-o para um novo array. Para resolver podemos utilizar o metodo Dequeue que remove o item da fila o retorna
+        O problema ocorre porque o metodo Peek não remove o item da fila, apenas copia-o para um novo array. Para resolver podemos utilizar o metodo Dequeue que remove o item da fila e o retorna.
 
     2. Implemente a funcionalidade de divisão.
 
-        Para implementar a divisão a calculadora precisamos apenas mudar a classe Calculadora, já que é onde ocorre a implementação das operações, e o método responsivo à elas.
+        Para implementar a divisão na calculadora precisamos apenas mudar a classe Calculadora, já que é onde ocorre a implementação das operações, e o método responsivo à elas. Também é necessário utilizar a tratativa de erro caso haja divisão por zero.
 
     3. Aplicação não está calculando a penultima operação corretamente.
         
@@ -32,7 +32,7 @@ B. Resolvendo as questões.
         
                 18 / 3 = 6
 
-        A aplicação está retornando -2147483647, devido ao tamanho máximo do tipo de dado utilizado (int), para esses casos, podemos utilizar outros tipos dados, porém, assumindo em manter o mesmo tipo de dado (int), optei por trocar para o tipo long, que armazena um maior range de inteiros
+        A aplicação está retornando -2147483647, devido ao tamanho máximo do tipo de dado utilizado (int), para esses casos, podemos utilizar outros tipos dados, porém, assumindo em manter o tipo como inteiro, optei por trocar para o tipo long, que armazena um maior range de inteiros.
 
     5. Implemente uma funcionalidade para imprimir toda a lista de operaçõoes a ser processada após cada calculo realizado.
 
@@ -40,14 +40,13 @@ B. Resolvendo as questões.
 
         Na classe ModifiedQueue eu adicionei o metodo printAll, para printar todas as operacoes futuras.
 
-        Também foi necessário adicionar outro metodo a classe de Operacoes, pois era necessário substituir o metodo toString.
+        Também foi necessário adicionar outro método a classe de Operacoes, pois era necessário substituir o método toString para a exibição correta.
 
     6. Crie uma nova pilha (Stack) para guardar o resultado de cada calculo efetuado e imprima a pilha ao final
 
-        Seguindo a mesma lógica da implementação anterior, criei uma modificação do objeto da Stack, porém sem a modificação do metodo toString pois não era necessário.
+        Seguindo a mesma lógica da implementação anterior, criei uma modificação do objeto da Stack, porém sem a modificação do método toString pois não era necessário.
 
 
-possiveis pontos de melhoria:
-    Falta de tratamento de exceções
-    Inconsistência de tipos de dados
-    Métodos públicos sem validação de parâmetros
+Possiveis pontos de melhoria:
+    Falta de tratamento de exceções.
+    Inconsistência de tipos de dados.
