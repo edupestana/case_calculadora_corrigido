@@ -1,0 +1,53 @@
+Primeiros passos:
+
+A. Entendimento do código.
+
+    Lógica começa na classe Operacoes, funcionando como apenas um objeto para salvar os atributos.
+
+    A classe Calculadora é dividida em dois escopos. Primeiro seriam os métodos de cada tipo de operação que pode ocorrer nela: soma, subtração, multiplicação. O segundo seria a criação de um método responsivo ao operador da classe Operacoes, criando um depara com switch case.
+
+    Já no código principal é usado uma fila de objetos da classe Operacoes, passando os atributos direto no método enqueue para adicionar a fila.
+
+    Logo após, é instanciado um objeto de Calculadora para puxar os cálculos da fila e printar, usando o metodo Peek.
+
+B. Resolvendo as questões.
+
+    1. Aplicação só está processando o primeiro item da fila infinitamente.
+
+        O problema ocorre porque o metodo Peek não remove o item da fila, apenas copia-o para um novo array. Para resolver podemos utilizar o metodo Dequeue que remove o item da fila o retorna
+
+    2. Implemente a funcionalidade de divisão.
+
+        Para implementar a divisão a calculadora precisamos apenas mudar a classe Calculadora, já que é onde ocorre a implementação das operações, e o método responsivo à elas.
+
+    3. Aplicação não está calculando a penultima operação corretamente.
+        
+            Saída esperada no console:
+        
+                14 - 8 = 6
+        
+                5 * 6 = 30
+        
+                2147483647 + 2 = 2147483649
+        
+                18 / 3 = 6
+
+        A aplicação está retornando -2147483647, devido ao tamanho máximo do tipo de dado utilizado (int), para esses casos, podemos utilizar outros tipos dados, porém, assumindo em manter o mesmo tipo de dado (int), optei por trocar para o tipo long, que armazena um maior range de inteiros
+
+    5. Implemente uma funcionalidade para imprimir toda a lista de operaçõoes a ser processada após cada calculo realizado.
+
+        Para realizar a impressão eu resolvi criar a classe ModifiedQueue que herda a classe Queue, para poder adicionar novos métodos caso seja necessário novas modificações posteriormente.
+
+        Na classe ModifiedQueue eu adicionei o metodo printAll, para printar todas as operacoes futuras.
+
+        Também foi necessário adicionar outro metodo a classe de Operacoes, pois era necessário substituir o metodo toString.
+
+    6. Crie uma nova pilha (Stack) para guardar o resultado de cada calculo efetuado e imprima a pilha ao final
+
+        Seguindo a mesma lógica da implementação anterior, criei uma modificação do objeto da Stack, porém sem a modificação do metodo toString pois não era necessário.
+
+
+possiveis pontos de melhoria:
+    Falta de tratamento de exceções
+    Inconsistência de tipos de dados
+    Métodos públicos sem validação de parâmetros
